@@ -61,7 +61,7 @@ public class OrderBasketDataSet {
 			pstmt =con.prepareStatement(sb.toString());
 			rs = pstmt.executeQuery();
 			//VO는 한번에 한개 로우만 담을 수 있어요 두 개 로우는 안되죠.
-			//VO에는 변수 하나에 한 개 값만 담는 변수를 선언했기 때문이죠.
+			//VO에는 변수 하나에 한 개 값만 담는 변수를 선언했기 때문이죠. 
 			
 			OrderVO obVO1 =null;
 			while(rs.next()) {
