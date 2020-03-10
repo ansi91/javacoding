@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+import thread.bank.ServerBank;
+
 public class TimeServerThread extends Thread {
 	TimeServer ts = null;
 	ObjectInputStream ois = null;//읽기-듣기
@@ -27,6 +29,9 @@ public class TimeServerThread extends Thread {
 		} catch (Exception e) {
 			System.out.println("TimeServerThread:"+e.toString());
 		}		
+	}
+	public TimeServerThread(ServerBank serverBank) {
+		// TODO Auto-generated constructor stub
 	}
 	//현재 서버에 접속한 모든 사용자에게 시간 정보 방송하기 구현
 	public void broadCasting(String msg) {
@@ -54,7 +59,7 @@ public class TimeServerThread extends Thread {
 				oos.writeObject(time);
 				sleep(1000);//1초 동안 지연시키기		
 			} catch (IOException ie) {
-				System.out.println(ie.toString());				
+			System.out.println(ie.toString());				
 			} catch (InterruptedException ie) {
 				System.out.println("다른 스레드가 새치기를 했을 때");
 			} 

@@ -46,7 +46,7 @@ public class TimeClient extends Thread {
 				Font f = new Font("Verdana",Font.BOLD,30);
 				jlb_time.setFont(f);
 				jlb_time.setText(time);
-				System.out.println(time);
+//				System.out.println(time);
 				try {
 					sleep(1000);
 				} catch (InterruptedException ie) {
