@@ -1,0 +1,5 @@
+Server Ready.........
+client info:Socket[addr=/192.168.0.7,port=52961,localport=3000]
+100#helloWorld
+helloWorld님이 입장하였습니다.
+201#helloWorld#안녕
