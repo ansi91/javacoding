@@ -1,0 +1,39 @@
+package thread.talk2;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import study.prac.DBConnectionMgr;
+
+public class TalkDao {
+Connection con = null;
+PreparedStatement pstmt = null;
+ResultSet rs = null;
+DBConnectionMgr dbMgr = DBConnectionMgr.getInstance();
+	
+	public String login(String mem_id, String mem_pw) {
+		String mem_name = null;
+		StringBuilder sql = new StringBuilder();
+		con = dbMgr.getConnection();
+		sql.append("Select mem_name FROM BANK WHERE mem_id=? AND mem_pw=?");
+		int i =1;
+		try {
+			if(mem_id!=null&&mem_pw!=null) {
+				pstmt = con.prepareStatement(sql.toString());
+				pstmt.setString(i++,mem_name);
+				pstmt.setString(i++, mem_pw);
+			}
+			rs=pstmt.executeQuery();
+		
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		return mem_name;
+	}
+	
+}
